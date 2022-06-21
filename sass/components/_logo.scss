@@ -1,0 +1,14 @@
+.logo {
+	font-family: Raleway, cursive;
+	text-decoration: none;
+	font-size: 26px;
+	line-height: 1.19;
+	color: $black-color;
+	&-accent {
+		color: $accent-color;
+	}
+}
+
+.footer__logo {
+	color: $text-white-color;
+}

@@ -1,0 +1,66 @@
+// Header contacts
+.header-contacts {
+	display: flex;
+	margin-left: auto;
+	flex-wrap: nowrap;
+	width: fit-content;
+	&__item:not(:last-child) {
+		margin-right: 30px;
+	}
+	&__link {
+		display: flex;
+		align-items: center;
+		padding-top: 32px;
+		padding-bottom: 32px;
+		text-decoration: none;
+		font-weight: 500;
+		line-height: 1.14;
+		letter-spacing: 0.02em;
+		color: $primary-text-color;
+		transition: color 250ms $transition-time;
+		&:hover,
+		&:focus {
+			color: $accent-color;
+		}
+	}
+	&__icon {
+		margin-right: 10px;
+		fill: currentColor;
+	}
+}
+
+// Footer address and contacts
+.footer-contacts {
+	&__list {
+		margin-top: 20px;
+		margin-right: 70px;
+		width: 231px;
+	}
+	&__item {
+		margin-bottom: 9px;
+	}
+	&__item:last-child {
+		margin-bottom: 0px;
+	}
+	&__location {
+		text-decoration: none;
+		font-style: normal;
+		line-height: 1.71;
+		color: $text-white-color;
+		transition: color 250ms $transition-time;
+		&:hover,
+		&:focus {
+			color: $accent-color;
+		}
+	}
+	&__link {
+		text-decoration: none;
+		font-style: normal;
+		line-height: 1.71;
+		color: $address-contact-color;
+		&:hover,
+		&:focus {
+			color: $accent-color;
+		}
+	}
+}

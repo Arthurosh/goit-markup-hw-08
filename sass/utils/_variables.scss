@@ -1,0 +1,37 @@
+$primary-text-color: #757575;
+$title-text-color: #212121;
+$text-white-color: #ffffff;
+$white-color: #ffffff;
+$black-color: #000000;
+$accent-color: #2196f3;
+$second-accent-color: #188ce8;
+$address-contact-color: rgba(255, 255, 255, 0.6);
+$primary-bgc: #ffffff;
+$second-bgc: #2f303a;
+$teams-bgc: #f5f4fa;
+$features-icon-bgc: #f5f4fa;
+$border-color: #ececec;
+$border-second-color: #eeeeee;
+$teams-icon-color: #afb1b8;
+$clients-icon-color: #afb1b8;
+$filter-bgc: #f5f4fa;
+$card-set-gap: 30px;
+$button-primary-shodow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+$filter-shodow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+$portfolio-card-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+	1px 4px 6px rgba(0, 0, 0, 0.16);
+$team-list-item-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+$activity-bg-color: rgba(47, 48, 58, 0.8);
+$modal-bgc: #ffffff;
+$backdrop-bgc: rgba(0, 0, 0, 0.2);
+$transition-time: cubic-bezier(0.4, 0, 0.2, 1);
+
+body {
+	font-family: Roboto, sans-serif;
+	font-style: normal;
+	margin: 0;
+	font-size: 14px;
+	letter-spacing: 0.03em;
+	background-color: $primary-bgc;
+	color: $primary-text-color;
+}

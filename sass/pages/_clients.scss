@@ -1,0 +1,28 @@
+/* ---------------------------------------CLIENTS------------------------------------------- */
+.clients {
+	&__list {
+		display: flex;
+	}
+	&__link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 170px;
+		height: 92px;
+		border: 1px solid $clients-icon-color;
+		border-radius: 4px;
+		cursor: pointer;
+		outline: transparent;
+		color: $clients-icon-color;
+		fill: currentColor;
+		transition: background-color 250ms $transition-time, fill 250ms $transition-time;
+		&:hover,
+		&:focus {
+			border-color: $accent-color;
+			fill: $accent-color;
+		}
+	}
+	&__item:not(:last-child) {
+		margin-right: 30px;
+	}
+}
