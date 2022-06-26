@@ -1,7 +1,13 @@
+/* ---HEADER--- */
 .header {
-	border-bottom: 1px solid $border-color;
-	&__container {
-		display: flex;
-		align-items: center;
-	}
+  border-bottom: 1px solid $border-color;
+
+  @media screen and (max-width: 767px) {
+    position: relative;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
 }

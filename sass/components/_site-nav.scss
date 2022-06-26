@@ -1,51 +1,83 @@
 .site-nav {
-	display: flex;
-	margin-left: 93px;
-	&__item:not(:last-child) {
-		margin-right: 40px;
-	}
-	&__link {
-		position: relative;
-		display: block;
-		padding-top: 32px;
-		padding-bottom: 32px;
+  @media screen and (min-width: 768px) {
+    margin-right: 84px;
+  }
 
-		font-weight: 500;
-		line-height: 1.14;
-		letter-spacing: 0.02em;
-		text-decoration: none;
-		color: $title-text-color;
-		transition: color 250ms $transition-time;
-		&:hover,
-		&:focus {
-			color: $accent-color;
-		}
-		&--active {
-			color: $accent-color;
-			&::after {
-				content: "";
-				position: absolute;
-				display: block;
-				width: 100%;
-				height: 4px;
-				left: 0;
-				bottom: -1px;
-				border-radius: 2px;
-				background-color: $accent-color;
-				transform: scaleX (0);
-				animation: lineActive 1000ms $transition-time 0ms 1 normal forwards running;
-			}
-			@keyframes lineActive {
-				0% {
-					transform: scaleX(0);
-				}
-				50% {
-					transform: scaleX(1.25);
-				}
-				100% {
-					transform: scaleX(1);
-				}
-			}
-		}
-	}
+  @media screen and (min-width: 1200px) {
+    margin-right: 305px;
+  }
+
+  &__list {
+    @media screen and (min-width: 768px) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__item:not(:last-child) {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 32px;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-right: 50px;
+    }
+  }
+  &__link {
+    font-weight: 500;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: $title-text-color;
+    transition: color 250ms $transition-time;
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
+    @media screen and (max-width: 479px) {
+      font-size: 30px;
+    }
+
+    @media screen and (min-width: 480px) and (max-width: 767px) {
+      font-size: 40px;
+    }
+
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+
+    &--active {
+      position: relative;
+      color: $accent-color;
+      &::after {
+        @media screen and (min-width: 768px) {
+          content: '';
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 4px;
+          left: 0;
+          bottom: -1px;
+          border-radius: 2px;
+          background-color: $accent-color;
+          transform: scaleX (0);
+          animation: lineActive 1000ms $transition-time 0ms 1 normal forwards running;
+        }
+        @keyframes lineActive {
+          0% {
+            transform: scaleX(0);
+          }
+          50% {
+            transform: scaleX(1.25);
+          }
+          100% {
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+  }
 }

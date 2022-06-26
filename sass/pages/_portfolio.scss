@@ -1,92 +1,127 @@
-/* ---------------------------------------PORTFOLIO------------------------------------------- */
+/* ---PORTFOLIO--- */
 .portfolio {
-	&__title {
-		@extend %visually-hidden;
-	}
+  &__title {
+    @extend %visually-hidden;
+  }
 }
 
 .portfolio-filter {
-	display: flex;
-	justify-content: center;
-	margin-bottom: 50px;
-	&__button {
-		padding: 6px 22px;
-		margin: 0px;
-		font-weight: 500;
-		font-size: 16px;
-		line-height: 1.62;
-		letter-spacing: 0.03em;
-		color: $title-text-color;
-		background-color: $filter-bgc;
-		transition: background-color 250ms $transition-time, color 250ms $transition-time, box-shadow 250ms $transition-time;
-		&:hover,
-		&:focus {
-			background-color: $accent-color;
-			color: $text-white-color;
-			box-shadow: $filter-shodow;
-		}
-	}
-	&__item:not(:last-child) {
-		margin-right: 8px;
-	}
+  display: flex;
+  justify-content: center;
+  @media screen and (max-width: 767px) {
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 50px;
+  }
+  &__button {
+    padding: 6px 22px;
+    margin: 0px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.62;
+    letter-spacing: 0.03em;
+    color: $title-text-color;
+    background-color: $filter-bgc;
+    transition: background-color 250ms $transition-time, color 250ms $transition-time,
+      box-shadow 250ms $transition-time;
+    &:hover,
+    &:focus {
+      background-color: $accent-color;
+      color: $text-white-color;
+      box-shadow: $filter-shodow;
+    }
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+    &:nth-child(-n + 3) {
+      @media screen and (max-width: 767px) {
+        margin-bottom: 15px;
+      }
+    }
+  }
 }
 
 .portfolio-project {
-	display: flex;
-	flex-wrap: wrap;
-	margin-left: calc(-1 * #{$card-set-gap});
-	margin-top: calc(-1 * #{$card-set-gap});
-	&__item {
-		flex-basis: calc(100% / 3 - $card-set-gap);
-		margin-left: 30px;
-		margin-top: 30px;
-	}
-	&__link {
-		text-decoration: none;
-		color: inherit;
-		display: block;
-		&:hover,
-		&:focus {
-			box-shadow: $portfolio-card-shadow;
-			.portfolio-project__text {
-				transform: translateY(0);
-			}
-		}
-	}
-	&__content {
-		padding: 20px 24px;
-		border: 1px solid $border-second-color;
-		border-top: none;
-	}
-	&__title {
-		margin-bottom: 4px;
-		font-weight: 700;
-		font-size: 18px;
-		line-height: 2;
-		letter-spacing: 0.06em;
-		color: $title-text-color;
-	}
-	&__category {
-		font-size: 16px;
-		line-height: 1.87;
-	}
-	&__thumb {
-		position: relative;
-		overflow: hidden;
-	}
-	&__text {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		text-align: center;
-		padding: 63px 24px;
-		font-size: 18px;
-		line-height: 1.56;
-		color: $text-white-color;
-		background-color: rgba(33, 150, 243, 0.9);
-		transform: translateY(101%);
-		transition: transform 250ms $transition-time;
-	}
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    // justify-content: center;
+  }
+  &__item {
+    &:not(:last-child) {
+      @media screen and (max-width: 767px) {
+        margin-bottom: 30px;
+      }
+    }
+    @media screen and (min-width: 768px) {
+      flex-basis: calc((100% - 30px) / 2);
+    }
+
+    @media screen and (min-width: 1200px) {
+      flex-basis: calc((100% - 30px * 2) / 3);
+    }
+  }
+  &__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    &:hover,
+    &:focus {
+      box-shadow: $portfolio-card-shadow;
+      .portfolio-project__text {
+        transform: translateY(0);
+      }
+    }
+  }
+  &__content {
+    flex-grow: 1;
+    padding: 20px 24px;
+    border: 1px solid $border-second-color;
+    border-top: none;
+  }
+  &__title {
+    margin-bottom: 4px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    color: $title-text-color;
+  }
+  &__category {
+    font-size: 16px;
+    line-height: 1.87;
+  }
+  &__thumb {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+  }
+  &__text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 63px 24px;
+    font-size: 18px;
+    line-height: 1.56;
+    color: $text-white-color;
+    background-color: rgba(33, 150, 243, 0.9);
+    transform: translateY(101%);
+    transition: transform 250ms $transition-time;
+  }
 }

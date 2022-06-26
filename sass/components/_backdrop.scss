@@ -1,56 +1,83 @@
 .backdrop {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	background: $backdrop-bgc;
-	opacity: 1;
-	transition: opacity 250ms $transition-time;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: $backdrop-bgc;
+  overflow-y: scroll;
+
+  opacity: 1;
+  transition: opacity 250ms $transition-time;
+
+  @media screen and (max-width: 767px) {
+    padding: 94px 15px;
+  }
 }
 .is-hidden {
-	opacity: 0;
-	pointer-events: none;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .modal {
-	position: absolute;
-	display: flex;
-	opacity: 1;
-	padding: 40px;
-	top: 50%;
-	left: 50%;
-	width: 528px;
-	height: 581px;
-	background: $modal-bgc;
-	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-	border-radius: 4px;
-	transform: translate(-50%, -50%) scale(1);
-	transition: transform 250ms $transition-time;
-	.is-hidden & {
-		transform: translate(-50%, -50%) scale(0.5);
-	}
+  padding: 40px;
+  background: $modal-bgc;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  opacity: 1;
+  transition: transform 250ms $transition-time, opacity 250ms $transition-time;
+
+  .is-hidden & {
+    @media screen and (max-width: 767px) {
+      opacity: 0;
+    }
+    @media screen and (min-width: 1200px) {
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    position: relative;
+    opacity: 1;
+    transition: opacity 250ms $transition-time;
+  }
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 450px;
+    height: 609px;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 250ms $transition-time;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+    height: 581px;
+  }
 }
 
 .modal-button-close {
-	position: absolute;
-	top: 8px;
-	right: 8px;
-	width: 30px;
-	height: 30px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-	padding: 6px;
-	background-color: $modal-bgc;
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	border-radius: 15px;
-	fill: $black-color;
-	transition: fill 250ms $transition-time, border-color 250ms $transition-time;
-	&:hover,
-	&:focus {
-		fill: $accent-color;
-		border-color: $accent-color;
-	}
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 6px;
+  background-color: $modal-bgc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  fill: $black-color;
+  transition: fill 250ms $transition-time, border-color 250ms $transition-time;
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+    border-color: $accent-color;
+  }
 }
